@@ -7,9 +7,7 @@ require "erb"
 include ERB::Util
 
 DataMapper::Logger.new(STDOUT, :debug)
-DataMapper::setup(:default, ENV["HEROKU_POSTGRESQL_AMBER_URL"] || "sqlite3://#{Dir.pwd}/dev.db")
-
-set :sessions, true
+DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/dev.db")
 
 class VerifiedUser
   include DataMapper::Resource
