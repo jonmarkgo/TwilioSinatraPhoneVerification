@@ -1,0 +1,13 @@
+<% if @error == true %>
+  <p class="error">Please try again, there was an error verifying your number!</p>
+<% end %>
+
+<div id="verify_code">
+  <p>You have been sent a verification code via SMS!</p>
+  <p>When you receive it, enter the verification code below:</p>
+  <form id="verify_number" action="/verify" method="POST">
+    <p>Phone Number: <input type="text" name="phone_number" id="phone_number" value="<%= @phone_number %>" /></p>
+    <p>Verification Code: <input type="text" name="code" id="code" /></p>
+    <p><input type="submit" name="submit" value="Verify" /></p>
+  </form>
+</div>

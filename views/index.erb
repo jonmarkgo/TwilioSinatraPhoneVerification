@@ -1,0 +1,9 @@
+<% if @error == true %>
+  <p class="error">Please try again, there was an error generating your verification code!</p>
+<% end %>
+
+<form id="enter_number" action="/register" method="POST">
+  <p>Enter your phone number:</p>
+  <p><input type="text" name="phone_number" id="phone_number" /></p>
+  <p><input type="submit" name="submit" value="Register" /></p>
+</form>
