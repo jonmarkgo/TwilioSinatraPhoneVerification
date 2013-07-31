@@ -4,6 +4,7 @@ require "data_mapper"
 require "twilio-ruby"
 require "sanitize"
 require "erb"
+require "rotp"
 include ERB::Util
 
 DataMapper::Logger.new(STDOUT, :debug)
