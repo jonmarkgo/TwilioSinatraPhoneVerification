@@ -5,6 +5,7 @@ gem "sinatra-contrib"
 gem "twilio-ruby"
 
 gem "sanitize"
+gem "rotp"
 
 gem "data_mapper"
 gem "sqlite3"

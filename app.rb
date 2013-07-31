@@ -30,6 +30,7 @@ before do
   else
     @error = true
   end
+
 end
 
 get "/" do
@@ -50,7 +51,8 @@ route :get, :post, '/register' do
         @phone_number = url_encode(@phone_number)
         redirect to("/verify?phone_number=#{@phone_number}&verified=1")
       end
-      code = rand(111111..999999)
+      totp = ROTP::TOTP.new("drawtheowl")
+      code = totp.now
       user.code = code
       user.save
 
